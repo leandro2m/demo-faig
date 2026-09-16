@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: faig-chat-config
+  namespace: faig-demo
+data:
+  FAIG_URL: "<your-fortiaigate-ip>" # e.g. https://<fortiaigate-ip>
+  FAIG_PATH: "/v1/chat-support"
+  FAIG_MODEL: "openai.gpt-oss-120b-1:0"
+  FAIG_VERIFY_TLS: "false"

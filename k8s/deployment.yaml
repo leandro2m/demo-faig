@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: faig-chat
+  namespace: faig-demo
+  labels:
+    app: faig-chat
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: faig-chat
+  template:
+    metadata:
+      labels:
+        app: faig-chat
+    spec:
+      containers:
+        - name: faig-chat
+          image: leandro2m/faig-demo:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8501
+          envFrom:
+            - configMapRef:
+                name: faig-chat-config
+            - secretRef:
+                name: faig-chat-secret
+          readinessProbe:
+            httpGet:
+              path: /_stcore/health
+              port: 8501
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /_stcore/health
+              port: 8501
+            initialDelaySeconds: 10
+            periodSeconds: 20
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi

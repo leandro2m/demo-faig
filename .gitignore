@@ -1,0 +1,6 @@
+.env
+k8s/secret.yaml
+__pycache__/
+*.pyc
+.venv/
+.DS_Store

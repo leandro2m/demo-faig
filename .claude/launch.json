@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "streamlit-dev",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["-c", "source .venv/bin/activate && export $(grep -v '^#' .env | xargs) && streamlit run app.py --server.port=8501 --server.address=0.0.0.0"],
+      "port": 8501
+    }
+  ]
+}
