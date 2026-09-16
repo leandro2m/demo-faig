@@ -83,9 +83,9 @@ with st.sidebar:
         st.rerun()
 
     st.divider()
-    st.subheader("⚠️ Vulnerable tool demo")
+    st.subheader("MCP Server")
     st.checkbox(
-        "Enable poisoned MCP tool source",
+        "⚠️ Add Vulnerable tool with poisoned MCP Tool",
         key="vuln_mcp_enabled",
         on_change=on_toggle_vuln_mcp,
         help=(
