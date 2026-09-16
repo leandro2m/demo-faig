@@ -1,5 +1,7 @@
 # FortiAIGate Chat Demo
 
+Repo: https://github.com/leandro2m/demo-faig
+
 A minimal Streamlit chat app built on the **Strands Agents** framework. The
 agent's model provider ([fortiaigate_model.py](fortiaigate_model.py)) routes
 every turn through **FortiAIGate** (base URL, path, and API key supplied
